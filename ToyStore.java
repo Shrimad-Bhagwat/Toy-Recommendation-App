@@ -39,7 +39,7 @@ class Toy {
     }
 
     public void display() {
-        System.out.println("\nToy Price " + price + 
+        System.out.println("Toy Price " + price + 
         " \nThe minimum age required " + minAgeReq+ 
         " \nIt is recommended for " + recFor + 
         " \nType is " + type + "\n-----\n");
@@ -52,12 +52,20 @@ public class ToyStore {
         for (int i = 0; i < Toys.length; i++) {
             if ((Toys[i].price <= b) && 
             (Toys[i].minAgeReq <= a)){
-                if (Toys[i].recFor == g){
-                    Toys[i].display();
-                }
-                else{
-                    Toys[i].display();
-                }
+                try {
+                    if (Toys[i].recFor == g){
+                        Toys[i].display();
+                    }
+                    else{
+                        Toys[i].display();
+                    }
+                    
+                } catch(Exception e){
+
+                    System.out.println("Sorry, no product available");
+                } 
+                
+                
             }
         }
     }
@@ -81,7 +89,7 @@ public class ToyStore {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("-----Welcome to ToysStore-----\n");
+        System.out.println("-----Welcome to ToyStore-----\n");
         System.out.print("1.Buy Toy 2.Set Toys\n : ");
         int choice = sc.nextInt();
         Toy[] Toys = new Toy[10];
