@@ -56,10 +56,7 @@ public class ToyStore {
                     if (Toys[i].recFor == g){
                         Toys[i].display();
                     }
-                    else{
-                        Toys[i].display();
-                    }
-                    
+
                 } catch(Exception e){
 
                     System.out.println("Sorry, no product available");
