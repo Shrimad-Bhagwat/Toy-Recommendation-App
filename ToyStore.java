@@ -81,7 +81,7 @@ public class ToyStore {
         char g = sc.next().charAt(0);
         Customer c1 = new Customer(b, a, g);
         c1.display();
-        System.out.println("Toys according to your choice :");
+        System.out.println("Toys according to your choice :\n");
         filter(Toys, b, a, g);
         sc.close();
     }
@@ -90,21 +90,21 @@ public class ToyStore {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("-----Welcome to ToyStore-----\n");
-        System.out.print("1.Buy Toy 2.Set Toys\n : ");
+        System.out.print("1.Buy Toy | 2.Set Toys | 3.Show All Toys\n : ");
         int choice = sc.nextInt();
         Toy[] Toys = new Toy[10];
+        Toys[0] = new Toy(20, 4, "Educational", 'm');
+        Toys[1] = new Toy(30, 8, "Board", 'f');
+        Toys[2] = new Toy(10, 3, "ActionFigure", 'm');
+        Toys[3] = new Toy(25, 7, "Cars&RC", 'm');
+        Toys[4] = new Toy(35, 10, "GameCollection", 'm');
+        Toys[5] = new Toy(15, 8, "Electronic", 'f');
+        Toys[6] = new Toy(10, 4, "Board", 'm');
+        Toys[7] = new Toy(40, 8, "Educational", 'f');
+        Toys[8] = new Toy(45, 7, "Electronic", 'm');
+        Toys[9] = new Toy(35, 5, "GameCollection", 'f');
         switch (choice) {
             case 1:
-                Toys[0] = new Toy(20, 4, "Educational", 'm');
-                Toys[1] = new Toy(30, 8, "Board", 'f');
-                Toys[2] = new Toy(10, 3, "ActionFigure", 'm');
-                Toys[3] = new Toy(25, 7, "Cars&RC", 'm');
-                Toys[4] = new Toy(35, 10, "GameCollection", 'm');
-                Toys[5] = new Toy(15, 8, "Electronic", 'f');
-                Toys[6] = new Toy(10, 4, "Board", 'm');
-                Toys[7] = new Toy(40, 8, "Educational", 'f');
-                Toys[8] = new Toy(45, 7, "Electronic", 'm');
-                Toys[9] = new Toy(35, 5, "GameCollection", 'f');
                 search(Toys);
                 break;
 
@@ -131,6 +131,12 @@ public class ToyStore {
                     
                 }
                 search(Toys);
+                break;
+            case 3:
+                System.out.println("List of All Toys\n");
+                for (int i = 0; i < Toys.length; i++) {
+                    Toys[i].display();
+                }
                 break;
 
             default:
